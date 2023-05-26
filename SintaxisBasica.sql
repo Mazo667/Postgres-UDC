@@ -30,3 +30,31 @@ ALTER TABLE nombre_tabla DROP COLUMN nombre_columna;
 --ELIMINAR UN REGRISTRO
 DELETE FROM nombre_tabla WHERE condicion;
 
+--INSERCION DE DATOS
+INSERT INTO nombre_tabla (nombre_columna1, nombre_columna2,..) VALUES (valor_columna1,valor_columna2,..);
+--MODIFICAR DATOS EXISTENTES
+UPDATE  nombre_tabla SET nombre_columna = nuevo_valor WHERE condicion;
+UPDATE puntos_viaje SET lugar = 'San Sebastian (centro)' WHERE orden = 1;
+
+--CONSULTAS DE TABLAS
+SELECT [ALL/DISTINCT] nombre_columna1,nombre_columna2,.. AS alias1,alias2,.. 
+FROM nombre_tabla AS alias_tabla
+WHERE condicion [AND / OR condicion]
+GROUP BY nombre_columna1,nombre_columna2,..
+HAVING condicion
+UNION [SELECT * FROM...]
+ORDER BY expresion [ASC / DESC] ;
+
+--LIKE
+SELECT nombre_columna,
+FROM nombre_tabla
+WHERE nombre_columna LIKE / NOT LIKE 'condicion';
+
+--EJEMPLO con Jeniffer
+SELECT nombre
+FROM persona
+WHERE nombre LIKE 'Jen%'; --TRUE
+WHERE nombre LIKE '%niffer'; --TRUE
+WHERE nombre LIKE '_eniffer'; --TRUE
+
+

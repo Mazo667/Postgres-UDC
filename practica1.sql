@@ -6,8 +6,8 @@ CONNECTION LIMIT =-1;
 --Creo la Tabla Dispositivo
 
 CREATE TABLE dispositivo (
-dis_id serial NOT NULL,
-dis_nombre character varying(30),
+id serial NOT NULL,
+nombre character varying(30),
 CONSTRAINT pk_disid PRIMARY KEY (dis_id) );
 
 --Creo la Tabla APlicaciones

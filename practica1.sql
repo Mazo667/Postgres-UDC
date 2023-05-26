@@ -39,5 +39,20 @@ UPDATE dispositivo SET nombre = 'Tablet Ipad 64gb' WHERE nombre = 'Ipad';
 --Modifico los datos de APlicacion
 UPDATE  aplicacion SET tamanio = 96 WHERE nombre = 'Chess 3D';
 
+--Si queremos eliminar un registro como puede ser Celular no se podra por que la Foreing Key mantiene una relacion
+--DELETE FROM dispositivo WHERE nombre = 'Celular';
+--ERROR:  update o delete en «dispositivo» viola la llave foránea «fk_dispositivo» en la tabla «aplicacion»
+--DETALLE:  La llave (id)=(3) todavía es referida desde la tabla «aplicacion».
+
+--Obtener los dispositivos
+SELECT * FROM dispositivo;
+--Obtener las aplicaciones que ocupan mas de 50mb
+SELECT * FROM aplicacion WHERE tamanio > 50;
+--Obtener las aplicaciones que son para el celular
+SELECT * FROM aplicacion WHERE dispositivo = 3;
+--Obtener el tamaño total de todas las aplicaciones
+SELECT SUM(tamanio) as Total FROM aplicacion;
+--Obtener la cantidad de aplicacion para cada dispositivo
+SELECT COUNT(dispositivo) FROM aplicacion GROUP BY dispositivo;
 
 

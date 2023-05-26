@@ -1,4 +1,4 @@
-CREACION DE UNA BASE DE DATOS:
+--CREACION DE UNA BASE DE DATOS
 
 CREATE DATABASE "Nombre"  --Si quiero conservar la mayuscula coloco las comillas dobles sino sin comillas se escribe en miniscula
   WITH OWNER = postgres
@@ -8,11 +8,11 @@ CREATE DATABASE "Nombre"  --Si quiero conservar la mayuscula coloco las comillas
     LC_COLLATE = 'Spanish_Spain.1252'   --Idioma
     CONNECTION LIMIT = -1; --Significa que por defecto no tiene limite de cantidad de conexiones
   
-TAMBIEN PODEMOS TENER UNA SINTAXIS MAS BASICA YA QUE LOS VALORES ANTERIORES VIENEN POR DEFECTO
+--TAMBIEN PODEMOS TENER UNA SINTAXIS MAS BASICA YA QUE LOS VALORES ANTERIORES VIENEN POR DEFECTO
 
 CREATE DATABASE nombre_baseDeDatos ;
 
-CREACION DE TABLAS 
+--CREACION DE TABLAS
 
 CREATE TABLE nombre_tabla (
     nombre_columna  tipo_columna,
@@ -21,4 +21,9 @@ CREATE TABLE nombre_tabla (
     CONSTRAINT fk_nombre_tabla_ref FOREIGN KEY (nombre_columna)
     REFERENCES nombre_tabla (nombre_columna_ref) );
     
-   
+--ELIMINAR UNA TABLA
+DROP TABLE nombre_tabla
+--ELIMINAR UNA BASE DE DATOS
+DROP DATABASE nombre_BaseDeDatos;
+--ELIMINAR UNA COLUMNA
+ALTER TABLE nombre_tabla DROP COLUMN nombre_columna; 

@@ -27,3 +27,6 @@ DROP TABLE nombre_tabla
 DROP DATABASE nombre_BaseDeDatos;
 --ELIMINAR UNA COLUMNA
 ALTER TABLE nombre_tabla DROP COLUMN nombre_columna; 
+--ELIMINAR UN REGRISTRO
+DELETE FROM nombre_tabla WHERE condicion;
+
